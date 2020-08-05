@@ -1,3 +1,5 @@
+$mainColor: #160f6a;
+
 ul {
-  background-color: darkblue;
+  background-color: lighten($mainColor, 60%);
 }
