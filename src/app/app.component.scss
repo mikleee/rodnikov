@@ -2,13 +2,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-body {
-  min-height: 100vh;
-  width: 100%;
+a {
+  text-decoration: none;
 }
 
 img {
@@ -16,24 +13,99 @@ img {
   display: block;
 }
 
+/*Header*/
+
 .head {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   background-color: #9db809;
-  height: 50px;
+  height: 40px;
+}
+
+.head .link-container {
+  display: flex;
   align-items: center;
   justify-content: flex-start;
+  font-size: 15px;
 }
 
-li {
+.head .head-instagram {
+  display: flex;
+  align-items: center;
   padding: 10px;
-  list-style-type: none;
+  font-size: 17px;
+  color: white;
 }
 
-a {
-  text-decoration: none;
+.head-instagram img {
+  max-width: 40px;
+  padding: 3px;
+}
+
+.head-instagram img.instagram {
+  width: 25px;
+  padding-left: 5px;
+}
+
+.head .head-link {
+  padding-left: 20px;
+}
+
+.head-link a {
   color: #022402;
+  transition: all .5s ease;
 }
 
-img.instagram {
-  width: 16px;
+.head-link a:hover {
+  color: #162d16;
+  text-decoration: none;
+  border-bottom: 3px solid #4d7938;
+  padding-bottom: 1px;
 }
+
+/*Banner*/
+
+.banner {
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner img {
+  width: 200px;
+}
+
+.banner .banner-search {
+  width: 50%;
+  padding: 15px;
+}
+
+.banner .banner-search input {
+  width: 100%;
+  height: 40px;
+  border: 1px silver solid;
+  border-radius: 5px;
+}
+
+.banner .banner-phones {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  border: silver 1px solid;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.banner-phones a, p{
+  color: #022402;
+  font-size: 20px;
+  padding: 0;
+}
+
+.banner-phones a:hover {
+  color: #9db809;
+}
+

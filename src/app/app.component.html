@@ -1,21 +1,24 @@
-<div class="head">
-  <ul>
-  <li><a routerLink="/catalogue" routerLinkActive="active">Каталог</a></li>
-  <li><a routerLink="/payment-and-delivery" routerLinkActive="active">Оплата и доставка</a></li>
-  <li><a routerLink="/contacts" routerLinkActive="active">Контактная информация</a></li>
-  <li><a routerLink="/portfolio" routerLinkActive="active">Портфолио</a></li>
-  <li><a href="https://www.instagram.com/rodnikov7" target="_blank"><img class="instagram" src="/assets/img/insta.png"></a></li>
-</ul>
-</div>
+<header class="head">
+  <div class="link-container">
+    <div class="head-link"><a routerLink="/catalogue" routerLinkActive="active">Каталог</a></div>
+    <div class="head-link"><a routerLink="/payment-and-delivery" routerLinkActive="active">Оплата и доставка</a></div>
+    <div class="head-link"><a routerLink="/contacts" routerLinkActive="active">Контактная информация</a></div>
+    <div class="head-link"><a routerLink="/portfolio" routerLinkActive="active">Портфолио</a></div>
+  </div>
+  <div class="head-instagram"><p>Мы в Instagram </p>
+    <a href="https://www.instagram.com/rodnikov7" target="_blank"><img class="instagram" src="/assets/img/insta.png"></a></div>
+</header>
 
-<div class="banner">
+<section class="banner">
   <div class="banner-img">
-    <img src="https://sun9-21.userapi.com/c850136/v850136968/d1b2b/TiPdxf2idwM.jpg?ava=1" alt="img">
+    <img src="https://lh3.googleusercontent.com/proxy/L0w8D39-YhHc7a8xRq0tJAaoAMcHqgD3WJF6n8tIEH1dg5ujdoNVLerbjJC3ByTu2T76EjdE663O9FOqnBJxsotdwM6zMW4zpxrQzU-u-_-KQTDROStpW8LqOw6yczJ2unQwttZzgEgl66fDhYnXuQ" alt="img">
   </div>
   <div class="banner-search">
-    <input type="text" placeholder="Поиск">
+    <input type="text" placeholder="Поиск товаров">
   </div>
-  <div class="banner-phones">Вставить телефон</div>
-</div>
+  <div class="banner-phones">
+    <p>+78142332211</p>
+    <a href="callto:+78142332211">Позвонить нам</a></div>
+</section>
 
 <router-outlet></router-outlet>
