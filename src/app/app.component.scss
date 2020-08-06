@@ -1,7 +1,37 @@
-$mainColor: #160f6a;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-ul {
-  background-color: lighten($mainColor, 60%);
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.head {
+  display: flex;
+  background-color: #9db809;
+  height: 50px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+li {
+  padding: 10px;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #022402;
 }
 
 img.instagram {
