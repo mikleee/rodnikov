@@ -1,11 +1,12 @@
-/*Header*/
+@import "../styles-variables";
 
+/*Header*/
 .head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: #9db809;
+  background-color: $mainColor;
   height: 40px;
 }
 
@@ -16,22 +17,8 @@
   font-size: 15px;
 }
 
-.head .head-instagram {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  font-size: 17px;
-  color: white;
-}
-
-.head-instagram img {
-  max-width: 40px;
-  padding: 3px;
-}
-
-.head-instagram img.instagram {
-  width: 25px;
-  padding-left: 5px;
+img.instagram {
+  width: 16px;
 }
 
 .head .head-link {
@@ -53,7 +40,7 @@
 /*Banner*/
 
 .banner {
-  height: 40%;
+  margin: 20px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -84,7 +71,7 @@
   padding: 15px;
 }
 
-.banner-phones a, p{
+.banner-phones a, p {
   color: #022402;
   font-size: 20px;
   padding: 0;
