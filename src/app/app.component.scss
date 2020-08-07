@@ -30,7 +30,8 @@ img.instagram {
   transition: all .5s ease;
 }
 
-.head-link a:hover {
+.head-link a:hover,
+.head-link a.active {
   color: #162d16;
   text-decoration: none;
   border-bottom: 3px solid #4d7938;
