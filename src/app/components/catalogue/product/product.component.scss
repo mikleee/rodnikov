@@ -1,8 +1,34 @@
+@import "../../../../styles-variables";
+
 .product {
-  .product-image {
+  border: 1px solid $mainColor;
+  border-radius: 5px;
+  margin: 10px;
+
+  .product-name {
+    padding: 7px;
+    background-color: $mainColor;
+    color: $inverseColor;
+  }
+
+  .product-body {
+    width: 150px;
+    height: 150px;
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
     img {
-      max-width: 100px;
-      max-height: 100px;
+      max-height: 100%;
+      max-width: 100%;
     }
+
+  }
+
+  .product-price {
+    padding: 7px;
   }
 }
+
