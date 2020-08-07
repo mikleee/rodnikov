@@ -81,3 +81,42 @@ img.instagram {
   color: #9db809;
 }
 
+
+.banner {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+  img {
+    width: 200px;
+  }
+
+  .banner-search {
+    width: 50%;
+    padding: 15px;
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 1px silver solid;
+      border-radius: 5px;
+    }
+  }
+
+  .banner-phones {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    border: silver 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+
+    a:hover {
+      color: #9db809;
+    }
+  }
+
+}
+
