@@ -1,0 +1,26 @@
+@import "../../../styles-variables";
+
+.catalogue {
+  .categories {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid $inverseColor;
+    background-color: $mainColor;
+
+    a.category {
+      color: $inverseColor;
+      padding: 5px;
+      margin: 5px 10px;
+      border: 1px dotted $inverseColor;
+
+      &.active {
+        color: $mainColor;
+        background-color: $inverseColor;
+      }
+
+    }
+
+
+  }
+}
