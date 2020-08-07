@@ -1,4 +1,4 @@
-<div class="catalogue">
+<div class="page catalogue">
 
   <div class="categories">
     <a class="category"
@@ -6,5 +6,11 @@
        [routerLink]="'category/' + category.id" routerLinkActive="active">{{category.name}}</a>
   </div>
 
-  <router-outlet></router-outlet>
+  <div class="page-content catalogue">
+    <router-outlet></router-outlet>
+  </div>
+
 </div>
+
+
+
