@@ -3,6 +3,7 @@
 .catalogue {
   .categories {
     display: flex;
+    flex-wrap: wrap;
     padding: 5px;
     margin: 5px;
     border: 1px solid $inverseColor;
