@@ -1,5 +1,8 @@
 import {Component} from "@angular/core";
 import {Router} from "@angular/router";
+import {MatDialog} from '@angular/material/dialog';
+import {Screen404Component} from "./components/screen404/screen404.component";
+import {CallbackPopupComponent} from "./components/callback-popup/callback-popup.component";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,8 @@ import {Router} from "@angular/router";
 export class AppComponent {
   searchString: string;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private dialog: MatDialog) {
   }
 
   onSearchKeyPress(event: any) {
@@ -20,6 +24,10 @@ export class AppComponent {
         }
       });
     }
+  }
+
+  requestCallback() {
+    this.dialog.open(CallbackPopupComponent);
   }
 
 

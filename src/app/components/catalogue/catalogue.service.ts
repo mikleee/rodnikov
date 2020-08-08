@@ -45,7 +45,7 @@ export class CatalogueService {
     let products: Product[] = [];
     if (searchValue) {
       searchValue = searchValue.toLowerCase();
-debugger;
+
       this.products.forEach((candidate: Product) => {
         let match = false;
 

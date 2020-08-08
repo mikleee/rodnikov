@@ -18,8 +18,9 @@
            (keyup)="onSearchKeyPress($event)"
            [(ngModel)]="searchString">
   </div>
-  <div class="banner-phones">
+  <div class="banner-contacts">
     <a href="callto:+78142332211">+78142332211</a>
+    <a (click)="requestCallback()">Заказать звонок</a>
   </div>
 </section>
 

@@ -1,0 +1,26 @@
+<div class="callback-popup">
+  <div>Перезвонить вам?</div>
+
+  <div>Укажите ваш номер телефона и имя. Мы свяжемся с вами в ближайшее время.</div>
+  <form (ngSubmit)="submitCallback()">
+    <app-error *ngIf="state.isError()"></app-error>
+
+    <div>
+      <label for="callbackName">Имя</label>
+      <input id="callbackName" type="text" name="name"
+             [(ngModel)]="callback.name"
+             [readOnly]="state.isInProgress()">
+    </div>
+    <div>
+      <label for="callbackPhone">Телефон</label>
+      <input id="callbackPhone" type="text" name="phone"
+             [(ngModel)]="callback.phone"
+             [readOnly]="state.isInProgress()">
+    </div>
+    <div>
+      <button type="submit" [disabled]="state.isInProgress()">Жмакай</button>
+      <app-in-progress *ngIf="state.isInProgress()"></app-in-progress>
+    </div>
+  </form>
+
+</div>

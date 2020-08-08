@@ -11,10 +11,16 @@ import {ContactsComponent} from './components/contacts/contacts.component';
 import {PortfolioComponent} from './components/portfolio/portfolio.component';
 import {PaymentAndDeliveryComponent} from './components/payment-and-delivery/payment-and-delivery.component';
 import {ProductPricePipe} from "./components/catalogue/product.price.pipe";
-import { ProductSubCategoryComponent } from './components/catalogue/product-sub-category/product-sub-category.component';
-import { ProductsListComponent } from './components/catalogue/products-list/products-list.component';
-import { SearchComponent } from './components/search/search.component';
+import {ProductSubCategoryComponent} from './components/catalogue/product-sub-category/product-sub-category.component';
+import {ProductsListComponent} from './components/catalogue/products-list/products-list.component';
+import {SearchComponent} from './components/search/search.component';
 import {FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {CallbackPopupComponent} from './components/callback-popup/callback-popup.component'
+import {HttpClientModule} from "@angular/common/http";
+import { ErrorComponent } from './components/error/error.component';
+import { InProgressComponent } from './components/in-progress/in-progress.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +35,18 @@ import {FormsModule} from "@angular/forms";
     ProductPricePipe,
     ProductSubCategoryComponent,
     ProductsListComponent,
-    SearchComponent
+    SearchComponent,
+    CallbackPopupComponent,
+    ErrorComponent,
+    InProgressComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

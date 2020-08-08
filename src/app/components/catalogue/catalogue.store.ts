@@ -32,7 +32,6 @@ config.forEach((c) => {
   });
 
 });
-debugger;
 
 /*while (catalogueStore.length < 10) {
   let category = createProductCategory(`Категория №${catalogueStore.length + 1}`);
