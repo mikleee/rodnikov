@@ -45,7 +45,7 @@ export class CatalogueService {
     let products: Product[] = [];
     if (searchValue) {
       searchValue = searchValue.toLowerCase();
-
+debugger;
       this.products.forEach((candidate: Product) => {
         let match = false;
 
@@ -60,7 +60,7 @@ export class CatalogueService {
 
         if (!match) {
           for (let v of toCompare) {
-            if (v && String(v).startsWith(searchValue)) {
+            if (v && String(v).toLowerCase().startsWith(searchValue)) {
               match = true;
               break;
             }
@@ -69,7 +69,7 @@ export class CatalogueService {
 
         if (!match && searchValue.length >= 3) {
           for (let v of toCompare) {
-            if (v && String(v).includes(searchValue)) {
+            if (v && String(v).toLowerCase().includes(searchValue)) {
               match = true;
               break;
             }
