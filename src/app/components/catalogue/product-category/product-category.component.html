@@ -1,6 +1,11 @@
 <div class="product-category">
-  <h3 class="category-name">{{category.name}}</h3>
-  <div class="category-products">
-    <app-product *ngFor="let product of category.products" [product]="product"></app-product>
+
+  <div class="product-category-subcategories">
+    <a class="product-category-subcategory"
+       *ngFor="let subCategory of category.subcategories"
+       [routerLink]="'' + subCategory.id" routerLinkActive="active">{{subCategory.name}}</a>
   </div>
+
+  <router-outlet></router-outlet>
+
 </div>

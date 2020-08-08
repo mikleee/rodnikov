@@ -1,0 +1,46 @@
+@import "../../../../styles-variables";
+
+.products-list {
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+
+    .product-wrapper {
+      width: 20%;
+
+      .product {
+        border-radius: 5px;
+        margin: 10px 10px 20px 10px;
+        display: flex;
+        flex-direction: column;
+
+
+        .product-image {
+          height: 300px;
+          padding: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+
+          img {
+            height: 160px;
+            max-width: 100%;
+          }
+        }
+
+        .product-name {
+          padding: 7px 0;
+          text-align: center;
+        }
+
+        .product-price {
+          font-weight: bold;
+          text-align: center;
+          padding: 7px;
+        }
+      }
+    }
+  }
+}

@@ -1,13 +1,25 @@
+@import "../../../../styles-variables";
+
 .product-category {
-
-  padding: 20px 50px;
-
-  .category-name {
-
-  }
-
-  .category-products {
+  .product-category-subcategories {
     display: flex;
     flex-wrap: wrap;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid $inverseColor;
+    background-color: $mainColor;
+
+    a.product-category-subcategory {
+      color: $inverseColor;
+      padding: 5px;
+      margin: 5px 10px;
+      border: 1px dotted $inverseColor;
+
+      &.active {
+        color: $mainColor;
+        background-color: $inverseColor;
+      }
+
+    }
   }
 }

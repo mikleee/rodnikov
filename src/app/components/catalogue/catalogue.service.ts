@@ -1,14 +1,44 @@
 import {Injectable} from "@angular/core";
 import {catalogueStore} from "./catalogue.store";
-import {ProductCategory} from "./catalogue.model";
+import {Product, ProductCategory, ProductSubCategory} from "./catalogue.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CatalogueService {
+  private categories: Map<number, ProductCategory> = new Map<number, ProductCategory>();
+  private subCategories: Map<number, ProductSubCategory> = new Map<number, ProductSubCategory>();
+  private products: Map<number, Product> = new Map<number, Product>();
 
-  getProductCategories(): ProductCategory[] {
+
+  constructor() {
+    catalogueStore.forEach((category) => {
+      this.categories.set(category.id, category);
+
+      category.subcategories.forEach((subCategory) => {
+        this.subCategories.set(subCategory.id, subCategory);
+
+        subCategory.products.forEach((product) => {
+          this.products.set(product.id, product);
+        });
+      });
+    })
+  }
+
+  getCategories(): ProductCategory[] {
     return catalogueStore
+  }
+
+  getCategory(id): ProductCategory {
+    return this.categories.get(id);
+  }
+
+  getSubCategory(id): ProductSubCategory {
+    return this.subCategories.get(id);
+  }
+
+  getProduct(id): Product {
+    return this.products.get(id);
   }
 
 }

@@ -14,7 +14,7 @@ export class CatalogueComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.categories = this.productsService.getProductCategories();
+    this.categories = this.productsService.getCategories();
   }
 
 }

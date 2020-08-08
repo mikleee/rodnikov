@@ -1,0 +1,33 @@
+<div class="page product-details">
+
+  <div class="page-header">
+    <div>{{product.name}}</div>
+    <div class="page-path">
+      <a routerLink="/catalogue/{{product.subcategory.category.id}}">{{product.subcategory.category.name}}</a>
+      →
+      <a routerLink="/catalogue/{{product.subcategory.category.id}}/{{product.subcategory.id}}">{{product.subcategory.name}}</a>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="product-details-inner">
+      <div class="product-images">
+        <div class="product-image-wrapper" *ngFor="let img of product.images">
+          <img [src]="img" alt="">
+        </div>
+      </div>
+      <div class="product-pricing-and-delivery">
+        <div class="price">{{product | productPrice}}</div>
+      </div>
+      <div class="product-description">
+        <div class="product-description-header">Описаниe</div>
+        <div class="product-description-content">
+          {{product.description || 'Нет описания'}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

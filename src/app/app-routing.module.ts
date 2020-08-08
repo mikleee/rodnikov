@@ -6,6 +6,8 @@ import {ProductCategoryComponent} from "./components/catalogue/product-category/
 import {PortfolioComponent} from "./components/portfolio/portfolio.component";
 import {ContactsComponent} from "./components/contacts/contacts.component";
 import {PaymentAndDeliveryComponent} from "./components/payment-and-delivery/payment-and-delivery.component";
+import {ProductSubCategoryComponent} from "./components/catalogue/product-sub-category/product-sub-category.component";
+import {ProductDetailsComponent} from "./components/catalogue/product-details/product-details.component";
 
 
 const routes: Routes = [
@@ -15,12 +17,22 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'product/:id',
+    component: ProductDetailsComponent
+  },
+  {
     path: 'catalogue',
     component: CatalogueComponent,
     children: [
       {
-        path: 'category/:id',
-        component: ProductCategoryComponent
+        path: ':categoryId',
+        component: ProductCategoryComponent,
+        children: [
+          {
+            path: ':subCategoryId',
+            component: ProductSubCategoryComponent
+          }
+        ]
       }
     ]
   },

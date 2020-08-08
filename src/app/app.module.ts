@@ -6,11 +6,13 @@ import {AppComponent} from './app.component';
 import {CatalogueComponent} from './components/catalogue/catalogue.component';
 import {Screen404Component} from './components/screen404/screen404.component';
 import {ProductCategoryComponent} from './components/catalogue/product-category/product-category.component';
-import {ProductComponent} from './components/catalogue/product/product.component';
+import {ProductDetailsComponent} from './components/catalogue/product-details/product-details.component';
 import {ContactsComponent} from './components/contacts/contacts.component';
 import {PortfolioComponent} from './components/portfolio/portfolio.component';
 import {PaymentAndDeliveryComponent} from './components/payment-and-delivery/payment-and-delivery.component';
-import {ProductPricePipe} from "./components/catalogue/product/product.price.pipe";
+import {ProductPricePipe} from "./components/catalogue/product.price.pipe";
+import { ProductSubCategoryComponent } from './components/catalogue/product-sub-category/product-sub-category.component';
+import { ProductsListComponent } from './components/catalogue/products-list/products-list.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import {ProductPricePipe} from "./components/catalogue/product/product.price.pip
     CatalogueComponent,
     Screen404Component,
     ProductCategoryComponent,
-    ProductComponent,
+    ProductDetailsComponent,
     ContactsComponent,
     PortfolioComponent,
     PaymentAndDeliveryComponent,
-    ProductPricePipe
+    ProductPricePipe,
+    ProductSubCategoryComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,

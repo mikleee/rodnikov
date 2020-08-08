@@ -1,12 +1,12 @@
 <div class="page catalogue">
 
-  <div class="categories">
-    <a class="category"
-       *ngFor="let category of categories"
-       [routerLink]="'category/' + category.id" routerLinkActive="active">{{category.name}}</a>
-  </div>
+  <div class="page-content">
+    <div class="categories">
+      <a class="category"
+         *ngFor="let category of categories"
+         [routerLink]="'' + category.id" routerLinkActive="active">{{category.name}}</a>
+    </div>
 
-  <div class="page-content catalogue">
     <router-outlet></router-outlet>
   </div>
 

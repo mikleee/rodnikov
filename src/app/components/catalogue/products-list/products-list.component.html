@@ -1,0 +1,17 @@
+<div class="products-list" [ngSwitch]="products.length">
+
+  <div *ngSwitchCase="0">Нет продуктов для отображения</div>
+
+  <div class="products" *ngSwitchDefault>
+    <div class="product-wrapper" *ngFor="let product of products">
+      <div class="product">
+        <a class="product-image" [title]="product.name" routerLink="/product/{{product.id}}">
+          <img [src]="product.images[0]" alt="">
+        </a>
+        <a class="product-name" routerLink="/product/{{product.id}}">{{product.name}}</a>
+        <div class="product-price">{{product | productPrice}}</div>
+      </div>
+    </div>
+  </div>
+
+</div>

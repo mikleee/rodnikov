@@ -19,15 +19,24 @@ img {
   width: 80%;
   padding: 30px;
 
+
   .page-header {
     display: block;
     font-size: 2em;
-    margin: 10px 0;
+    margin: 20px 0 20px 0;
     font-weight: bold;
+    position: relative;
+
+    .page-path {
+      position: absolute;
+      font-size: 14px;
+      top: -17px;
+      font-weight: 200;
+    }
   }
 
   .page-content {
-
+    padding: 0 10px;
   }
 }
 
