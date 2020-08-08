@@ -8,6 +8,7 @@ import {ContactsComponent} from "./components/contacts/contacts.component";
 import {PaymentAndDeliveryComponent} from "./components/payment-and-delivery/payment-and-delivery.component";
 import {ProductSubCategoryComponent} from "./components/catalogue/product-sub-category/product-sub-category.component";
 import {ProductDetailsComponent} from "./components/catalogue/product-details/product-details.component";
+import {SearchComponent} from "./components/search/search.component";
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'product/:id',
     component: ProductDetailsComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   },
   {
     path: 'catalogue',

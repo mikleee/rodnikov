@@ -13,6 +13,8 @@ import {PaymentAndDeliveryComponent} from './components/payment-and-delivery/pay
 import {ProductPricePipe} from "./components/catalogue/product.price.pipe";
 import { ProductSubCategoryComponent } from './components/catalogue/product-sub-category/product-sub-category.component';
 import { ProductsListComponent } from './components/catalogue/products-list/products-list.component';
+import { SearchComponent } from './components/search/search.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { ProductsListComponent } from './components/catalogue/products-list/prod
     PaymentAndDeliveryComponent,
     ProductPricePipe,
     ProductSubCategoryComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+<div class="page search">
+  <h1 class="page-header">Поиск</h1>
+
+  <div class="page-content" [ngSwitch]="products.length">
+    <div *ngSwitchCase="0">Совпадений не найдено</div>
+
+    <app-products-list
+      *ngSwitchDefault
+      [products]="products"></app-products-list>
+
+  </div>
+
+
+</div>

@@ -41,4 +41,47 @@ export class CatalogueService {
     return this.products.get(id);
   }
 
+  findProductByCriteria(searchValue: string): Product[] {
+    let products: Product[] = [];
+    if (searchValue) {
+      searchValue = searchValue.toLowerCase();
+
+      this.products.forEach((candidate: Product) => {
+        let match = false;
+
+        if (String(candidate.id) == searchValue) {
+          match = true;
+        }
+
+        let toCompare = [];
+        toCompare.push(candidate.name);
+        toCompare.push(candidate.subcategory.name);
+        toCompare.push(candidate.subcategory.category.name);
+
+        if (!match) {
+          for (let v of toCompare) {
+            if (v && String(v).startsWith(searchValue)) {
+              match = true;
+              break;
+            }
+          }
+        }
+
+        if (!match && searchValue.length >= 3) {
+          for (let v of toCompare) {
+            if (v && String(v).includes(searchValue)) {
+              match = true;
+              break;
+            }
+          }
+        }
+
+        if (match) {
+          products.push(candidate);
+        }
+      });
+    }
+    return products;
+  }
+
 }
