@@ -54,6 +54,10 @@ const routes: Routes = [
     component: PortfolioComponent
   },
   {
+    path: 'error',
+    component: Screen404Component
+  },
+  {
     path: '**',
     component: Screen404Component
   },

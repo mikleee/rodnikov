@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductSubCategory} from "../catalogue.model";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CatalogueService} from "../catalogue.service";
 
 @Component({
@@ -13,6 +13,7 @@ export class ProductSubCategoryComponent implements OnInit {
   subCategory: ProductSubCategory;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private productsService: CatalogueService) {
   }
 
@@ -20,6 +21,9 @@ export class ProductSubCategoryComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       let id = Number(params.get('subCategoryId'));
       this.subCategory = this.productsService.getSubCategory(id);
+      if (!this.subCategory) {
+        this.router.navigateByUrl('/error');
+      }
     });
 
   }

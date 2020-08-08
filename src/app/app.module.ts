@@ -19,8 +19,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {CallbackPopupComponent} from './components/callback-popup/callback-popup.component'
 import {HttpClientModule} from "@angular/common/http";
-import { ErrorComponent } from './components/error/error.component';
-import { InProgressComponent } from './components/in-progress/in-progress.component';
+import {ErrorComponent} from './components/error/error.component';
+import {InProgressComponent} from './components/in-progress/in-progress.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { ProductsListPaginatorComponent } from './components/catalogue/products-list/products-list-paginator/products-list-paginator.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { InProgressComponent } from './components/in-progress/in-progress.compon
     SearchComponent,
     CallbackPopupComponent,
     ErrorComponent,
-    InProgressComponent
+    InProgressComponent,
+    ProductsListPaginatorComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { InProgressComponent } from './components/in-progress/in-progress.compon
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,16 @@
 <div class="page product-details">
 
-  <div class="page-header">
-    <div>{{product.name}}</div>
-    <div class="page-path">
-      <a routerLink="/catalogue/{{product.subcategory.category.id}}">{{product.subcategory.category.name}}</a>
-      →
-      <a routerLink="/catalogue/{{product.subcategory.category.id}}/{{product.subcategory.id}}">{{product.subcategory.name}}</a>
-    </div>
+  <div class="page-path">
+    <a routerLink="/catalogue/{{product.subcategory.category.id}}">{{product.subcategory.category.name}}</a>
+    →
+    <a routerLink="/catalogue/{{product.subcategory.category.id}}/{{product.subcategory.id}}">{{product.subcategory.name}}</a>
   </div>
 
-  <div class="page-content">
+  <div class="page-header">{{product.name}}</div>
 
+  <div class="product-id">Артикул: {{product.id}}</div>
+
+  <div class="page-content">
     <div class="product-details-inner">
       <div class="product-images">
         <div class="product-image-wrapper" *ngFor="let img of product.images">

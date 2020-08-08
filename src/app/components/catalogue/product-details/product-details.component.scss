@@ -2,6 +2,10 @@
 
 .product-details {
 
+  .product-id {
+    font-size: 12px;
+  }
+
   .product-details-inner {
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +14,7 @@
       width: 60%;
       display: flex;
       flex-wrap: wrap;
-      padding-right: 40px;
+      padding: 2em;
 
       .product-image-wrapper {
         width: 30%;

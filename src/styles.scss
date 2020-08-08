@@ -1,3 +1,5 @@
+@import "styles-variables";
+
 *,
 *::before,
 *::after {
@@ -19,6 +21,18 @@ img {
   width: 80%;
   padding: 30px;
 
+  .page-path {
+    font-size: 12px;
+    font-weight: 200;
+    height: 16px;
+    width: 100%;
+    color: $textMutedColor;
+
+    a {
+      font-style: italic;
+      color: $textMutedColor;
+    }
+  }
 
   .page-header {
     display: block;
@@ -26,13 +40,6 @@ img {
     margin: 20px 0 20px 0;
     font-weight: bold;
     position: relative;
-
-    .page-path {
-      position: absolute;
-      font-size: 14px;
-      top: -17px;
-      font-weight: 200;
-    }
   }
 
   .page-content {
@@ -41,7 +48,11 @@ img {
 }
 
 
+html, body {
+  height: 100%;
+}
 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

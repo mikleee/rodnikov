@@ -25,8 +25,9 @@ config.forEach((c) => {
     let sub = createProductSubCategory(sc, category);
     category.subcategories.push(sub);
 
-    while (sub.products.length < 10) {
-      let product = createProduct(`${sc} №${sub.products.length+1}`, sub);
+    let productsCount = Math.ceil(Math.random() * 55) + 1;
+    while (sub.products.length < productsCount) {
+      let product = createProduct(`${sc} №${sub.products.length + 1}`, sub);
       sub.products.push(product);
     }
   });
