@@ -1,14 +1,28 @@
 <div class="page catalogue">
 
-  <div class="page-content">
-    <div class="categories">
-      <a class="category"
-         *ngFor="let category of categories"
-         [routerLink]="'' + category.id" routerLinkActive="active">{{category.name}}</a>
+  <div *ngIf="state.isLoading()">
+    <div class="page-content">
+      <app-in-progress></app-in-progress>
     </div>
-
-    <router-outlet></router-outlet>
   </div>
+
+  <div *ngIf="state.isError()">
+    <div class="page-content">
+      <app-in-progress></app-in-progress>
+    </div>
+  </div>
+
+  <div *ngIf="state.isReady()">
+    <div class="page-content" *ngIf="state.isReady()">
+      <div class="categories">
+        <a class="category"
+           *ngFor="let category of categories"
+           [routerLink]="'' + category.id" routerLinkActive="active">{{category.name}}</a>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
 
 </div>
 

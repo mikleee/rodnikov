@@ -1,15 +1,28 @@
 <div class="page search">
 
-  <div class="page-path"></div>
-
-  <h1 class="page-header">Поиск</h1>
-
-  <div class="page-content" [ngSwitch]="products.length">
-    <div *ngSwitchCase="0">Совпадений не найдено</div>
-    <div *ngSwitchDefault>
-      <p>Найдено {{products.length}} совпадений.</p>
-      <app-products-list [products]="products"></app-products-list>
+  <div *ngIf="state.isLoading()">
+    <div class="page-content">
+      <app-in-progress></app-in-progress>
     </div>
   </div>
+
+  <div *ngIf="state.isError()">
+    <div class="page-content">
+      <app-in-progress></app-in-progress>
+    </div>
+  </div>
+
+  <div *ngIf="state.isReady()">
+    <div class="page-path"></div>
+    <h1 class="page-header">Поиск</h1>
+    <div class="page-content" [ngSwitch]="products.length">
+      <div *ngSwitchCase="0">Совпадений не найдено</div>
+      <div *ngSwitchDefault>
+        <p>Найдено {{products.length}} совпадений.</p>
+        <app-products-list [products]="products"></app-products-list>
+      </div>
+    </div>
+  </div>
+
 
 </div>

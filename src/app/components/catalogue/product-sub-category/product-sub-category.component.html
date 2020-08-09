@@ -1,3 +1,15 @@
 <div class="product-sub-category">
-  <app-products-list class="sub-category-products" [products]="subCategory.products"></app-products-list>
+
+  <div *ngIf="state.isLoading()">
+    <app-in-progress></app-in-progress>
+  </div>
+
+  <div *ngIf="state.isError()">
+    <app-in-progress></app-in-progress>
+  </div>
+
+  <div *ngIf="state.isReady()">
+    <app-products-list class="sub-category-products" [products]="subCategory.products"></app-products-list>
+  </div>
+
 </div>
