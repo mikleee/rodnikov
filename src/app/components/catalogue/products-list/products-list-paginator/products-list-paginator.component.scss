@@ -1,0 +1,27 @@
+.products-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .sort {
+    display: flex;
+    font-size: 12px;
+
+    .sort-label {
+      margin-right: 1em;
+    }
+
+    .sort-options {
+      display: flex;
+
+      .sort-option {
+        margin: 0 5px;
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+
+  }
+}

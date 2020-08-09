@@ -1,0 +1,617 @@
+[
+  {
+    "name": "Двери",
+    "image": "assets/mock-images/8.jpg",
+    "subcategories": [
+      {
+        "name": "Входные двери",
+        "image": "assets/mock-images/3.jpg",
+        "products": [
+          {
+            "name": "Входные двери №1",
+            "price": 22.51290476189034,
+            "images": [
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/8.jpg",
+              "assets/mock-images/2.jpg"
+            ]
+          },
+          {
+            "name": "Входные двери №2",
+            "price": 72.5400079866688,
+            "images": [
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/3.jpg",
+              "assets/mock-images/12.jpg"
+            ]
+          },
+          {
+            "name": "Входные двери №3",
+            "price": 143.94981520849524,
+            "images": [
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/5.jpg",
+              "assets/mock-images/5.jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Межкомнатные двери",
+        "image": "assets/mock-images/6.jpg",
+        "products": [
+          {
+            "name": "Межкомнатные двери №1",
+            "price": 282.03662196634036,
+            "images": [
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/5.jpg",
+              "assets/mock-images/7.jpg"
+            ]
+          },
+          {
+            "name": "Межкомнатные двери №2",
+            "price": 0.8747985682899584,
+            "images": [
+              "assets/mock-images/6.jpg",
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/10.jpg"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Напольные покрытия",
+    "image": "assets/mock-images/4.jpg",
+    "subcategories": [
+      {
+        "name": "Плитка",
+        "image": "assets/mock-images/5.jpg",
+        "products": [
+          {
+            "name": "Плитка №1",
+            "price": 141.23871274688352,
+            "images": [
+              "assets/mock-images/7.jpg",
+              "assets/mock-images/8.jpg",
+              "assets/mock-images/13.jpg"
+            ]
+          },
+          {
+            "name": "Плитка №2",
+            "price": 166.9413984459517,
+            "images": [
+              "assets/mock-images/14.jpg",
+              "assets/mock-images/8.jpg",
+              "assets/mock-images/11.jpg"
+            ]
+          },
+          {
+            "name": "Плитка №3",
+            "price": 179.09523871679642,
+            "images": [
+              "assets/mock-images/10.jpg",
+              "assets/mock-images/4.jpg",
+              "assets/mock-images/5.jpg"
+            ]
+          },
+          {
+            "name": "Плитка №4",
+            "price": 273.75707118601895,
+            "images": [
+              "assets/mock-images/4.jpg",
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/11.jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ламинат",
+        "image": "assets/mock-images/5.jpg",
+        "products": [
+          {
+            "name": "Ламинат №1",
+            "price": 93.9136036450716,
+            "images": [
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/2.jpg",
+              "assets/mock-images/12.jpg"
+            ]
+          },
+          {
+            "name": "Ламинат №2",
+            "price": 169.84663923813895,
+            "images": [
+              "assets/mock-images/11.jpg",
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/3.jpg"
+            ]
+          },
+          {
+            "name": "Ламинат №3",
+            "price": 210.34009852758732,
+            "images": [
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/10.jpg",
+              "assets/mock-images/2.jpg"
+            ]
+          },
+          {
+            "name": "Ламинат №4",
+            "price": 283.52527400628406,
+            "images": [
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/3.jpg",
+              "assets/mock-images/7.jpg"
+            ]
+          },
+          {
+            "name": "Ламинат №5",
+            "price": 119.29454325714082,
+            "images": [
+              "assets/mock-images/8.jpg",
+              "assets/mock-images/11.jpg",
+              "assets/mock-images/8.jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Паркет",
+        "image": "assets/mock-images/12.jpg",
+        "products": [
+          {
+            "name": "Паркет №1",
+            "price": 27.046323523074854,
+            "images": [
+              "assets/mock-images/6.jpg",
+              "assets/mock-images/3.jpg",
+              "assets/mock-images/12.jpg"
+            ]
+          },
+          {
+            "name": "Паркет №2",
+            "price": 167.69959126825066,
+            "images": [
+              "assets/mock-images/4.jpg",
+              "assets/mock-images/6.jpg",
+              "assets/mock-images/8.jpg"
+            ]
+          },
+          {
+            "name": "Паркет №3",
+            "price": 212.1690364440725,
+            "images": [
+              "assets/mock-images/7.jpg",
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/2.jpg"
+            ]
+          },
+          {
+            "name": "Паркет №4",
+            "price": 35.1333220244753,
+            "images": [
+              "assets/mock-images/10.jpg",
+              "assets/mock-images/11.jpg",
+              "assets/mock-images/6.jpg"
+            ]
+          },
+          {
+            "name": "Паркет №5",
+            "price": 122.90406568380774,
+            "images": [
+              "assets/mock-images/3.jpg",
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/7.jpg"
+            ]
+          },
+          {
+            "name": "Паркет №6",
+            "price": 202.76563993880058,
+            "images": [
+              "assets/mock-images/1.jpg",
+              "assets/mock-images/8.jpg",
+              "assets/mock-images/8.jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Солома",
+        "image": "assets/mock-images/4.jpg",
+        "products": [
+          {
+            "name": "Солома №1",
+            "price": 232.80420557536917,
+            "images": [
+              "assets/mock-images/14.jpg",
+              "assets/mock-images/8.jpg",
+              "assets/mock-images/6.jpg"
+            ]
+          },
+          {
+            "name": "Солома №2",
+            "price": 64.94514333466009,
+            "images": [
+              "assets/mock-images/4.jpg",
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/12.jpg"
+            ]
+          },
+          {
+            "name": "Солома №3",
+            "price": 256.93956047948944,
+            "images": [
+              "assets/mock-images/10.jpg",
+              "assets/mock-images/3.jpg",
+              "assets/mock-images/3.jpg"
+            ]
+          },
+          {
+            "name": "Солома №4",
+            "price": 223.70344261873683,
+            "images": [
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/1.jpg",
+              "assets/mock-images/3.jpg"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Гомна на окна",
+    "image": "assets/mock-images/11.jpg",
+    "subcategories": [
+      {
+        "name": "Роллеты",
+        "image": "assets/mock-images/6.jpg",
+        "products": [
+          {
+            "name": "Роллеты №1",
+            "price": 173.79406948212286,
+            "images": [
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/2.jpg",
+              "assets/mock-images/9.jpg"
+            ]
+          },
+          {
+            "name": "Роллеты №2",
+            "price": 73.96962879807012,
+            "images": [
+              "assets/mock-images/11.jpg",
+              "assets/mock-images/1.jpg",
+              "assets/mock-images/6.jpg"
+            ]
+          },
+          {
+            "name": "Роллеты №3",
+            "price": 152.40132408294716,
+            "images": [
+              "assets/mock-images/5.jpg",
+              "assets/mock-images/4.jpg",
+              "assets/mock-images/11.jpg"
+            ]
+          },
+          {
+            "name": "Роллеты №4",
+            "price": 174.57133743493708,
+            "images": [
+              "assets/mock-images/6.jpg",
+              "assets/mock-images/14.jpg",
+              "assets/mock-images/14.jpg"
+            ]
+          },
+          {
+            "name": "Роллеты №5",
+            "price": 279.0320964675371,
+            "images": [
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/11.jpg",
+              "assets/mock-images/7.jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Жалюзи",
+        "image": "assets/mock-images/1.jpg",
+        "products": [
+          {
+            "name": "Жалюзи №1",
+            "price": 229.42272964979597,
+            "images": [
+              "assets/mock-images/3.jpg",
+              "assets/mock-images/10.jpg",
+              "assets/mock-images/14.jpg"
+            ]
+          },
+          {
+            "name": "Жалюзи №2",
+            "price": 150.69661772474706,
+            "images": [
+              "assets/mock-images/3.jpg",
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/2.jpg"
+            ]
+          },
+          {
+            "name": "Жалюзи №3",
+            "price": 161.4357331199552,
+            "images": [
+              "assets/mock-images/11.jpg",
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/14.jpg"
+            ]
+          },
+          {
+            "name": "Жалюзи №4",
+            "price": 6.701024120620236,
+            "images": [
+              "assets/mock-images/14.jpg",
+              "assets/mock-images/7.jpg",
+              "assets/mock-images/7.jpg"
+            ]
+          },
+          {
+            "name": "Жалюзи №5",
+            "price": 259.7013058007734,
+            "images": [
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/4.jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Шторы",
+        "image": "assets/mock-images/4.jpg",
+        "products": [
+          {
+            "name": "Шторы №1",
+            "price": 195.66286401010424,
+            "images": [
+              "assets/mock-images/11.jpg",
+              "assets/mock-images/10.jpg",
+              "assets/mock-images/2.jpg"
+            ]
+          },
+          {
+            "name": "Шторы №2",
+            "price": 272.78742816003114,
+            "images": [
+              "assets/mock-images/6.jpg",
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/6.jpg"
+            ]
+          },
+          {
+            "name": "Шторы №3",
+            "price": 126.24559247818637,
+            "images": [
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/6.jpg"
+            ]
+          },
+          {
+            "name": "Шторы №4",
+            "price": 50.88593298160833,
+            "images": [
+              "assets/mock-images/3.jpg",
+              "assets/mock-images/7.jpg",
+              "assets/mock-images/9.jpg"
+            ]
+          },
+          {
+            "name": "Шторы №5",
+            "price": 27.335320477352543,
+            "images": [
+              "assets/mock-images/6.jpg",
+              "assets/mock-images/11.jpg",
+              "assets/mock-images/9.jpg"
+            ]
+          },
+          {
+            "name": "Шторы №6",
+            "price": 112.81944201588112,
+            "images": [
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/4.jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Гардины",
+        "image": "assets/mock-images/12.jpg",
+        "products": [
+          {
+            "name": "Гардины №1",
+            "price": 125.39205505761146,
+            "images": [
+              "assets/mock-images/14.jpg",
+              "assets/mock-images/7.jpg",
+              "assets/mock-images/10.jpg"
+            ]
+          },
+          {
+            "name": "Гардины №2",
+            "price": 7.8051132405631,
+            "images": [
+              "assets/mock-images/4.jpg",
+              "assets/mock-images/4.jpg",
+              "assets/mock-images/13.jpg"
+            ]
+          },
+          {
+            "name": "Гардины №3",
+            "price": 263.3646505385646,
+            "images": [
+              "assets/mock-images/14.jpg",
+              "assets/mock-images/1.jpg",
+              "assets/mock-images/14.jpg"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Настенные покрытия",
+    "image": "assets/mock-images/14.jpg",
+    "subcategories": [
+      {
+        "name": "Обои",
+        "image": "assets/mock-images/1.jpg",
+        "products": [
+          {
+            "name": "Обои №1",
+            "price": 279.89034323538027,
+            "images": [
+              "assets/mock-images/1.jpg",
+              "assets/mock-images/6.jpg",
+              "assets/mock-images/14.jpg"
+            ]
+          },
+          {
+            "name": "Обои №2",
+            "price": 276.422363407286,
+            "images": [
+              "assets/mock-images/9.jpg",
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/2.jpg"
+            ]
+          },
+          {
+            "name": "Обои №3",
+            "price": 76.63921314669051,
+            "images": [
+              "assets/mock-images/14.jpg",
+              "assets/mock-images/2.jpg",
+              "assets/mock-images/3.jpg"
+            ]
+          },
+          {
+            "name": "Обои №4",
+            "price": 48.25859477783085,
+            "images": [
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/1.jpg",
+              "assets/mock-images/11.jpg"
+            ]
+          },
+          {
+            "name": "Обои №5",
+            "price": 163.07713870116282,
+            "images": [
+              "assets/mock-images/7.jpg",
+              "assets/mock-images/14.jpg",
+              "assets/mock-images/11.jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Краска",
+        "image": "assets/mock-images/4.jpg",
+        "products": [
+          {
+            "name": "Краска №1",
+            "price": 32.98399944439243,
+            "images": [
+              "assets/mock-images/1.jpg",
+              "assets/mock-images/5.jpg",
+              "assets/mock-images/8.jpg"
+            ]
+          },
+          {
+            "name": "Краска №2",
+            "price": 112.1207179388764,
+            "images": [
+              "assets/mock-images/4.jpg",
+              "assets/mock-images/4.jpg",
+              "assets/mock-images/1.jpg"
+            ]
+          },
+          {
+            "name": "Краска №3",
+            "price": 90.11762635733704,
+            "images": [
+              "assets/mock-images/8.jpg",
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/2.jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Кирпич",
+        "image": "assets/mock-images/9.jpg",
+        "products": [
+          {
+            "name": "Кирпич №1",
+            "price": 8.12685971798308,
+            "images": [
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/7.jpg"
+            ]
+          },
+          {
+            "name": "Кирпич №2",
+            "price": 17.77895752330434,
+            "images": [
+              "assets/mock-images/14.jpg",
+              "assets/mock-images/12.jpg",
+              "assets/mock-images/12.jpg"
+            ]
+          },
+          {
+            "name": "Кирпич №3",
+            "price": 142.13985508869138,
+            "images": [
+              "assets/mock-images/3.jpg",
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/10.jpg"
+            ]
+          },
+          {
+            "name": "Кирпич №4",
+            "price": 105.25152734506769,
+            "images": [
+              "assets/mock-images/7.jpg",
+              "assets/mock-images/5.jpg",
+              "assets/mock-images/11.jpg"
+            ]
+          },
+          {
+            "name": "Кирпич №5",
+            "price": 93.7412251560973,
+            "images": [
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/13.jpg",
+              "assets/mock-images/11.jpg"
+            ]
+          },
+          {
+            "name": "Кирпич №6",
+            "price": 255.99807288419404,
+            "images": [
+              "assets/mock-images/6.jpg",
+              "assets/mock-images/5.jpg",
+              "assets/mock-images/6.jpg"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

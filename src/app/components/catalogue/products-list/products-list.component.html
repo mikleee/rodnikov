@@ -3,8 +3,7 @@
   <div *ngSwitchCase="0">Нет продуктов для отображения</div>
 
   <div *ngSwitchDefault>
-    <app-products-list-paginator [pagination]="pagination"></app-products-list-paginator>
-
+    <app-products-list-paginator [pagination]="pagination" [sortOptions]="sortOptions"></app-products-list-paginator>
 
     <div class="products">
       <div class="product-wrapper" *ngFor="let product of page">
@@ -18,7 +17,7 @@
       </div>
     </div>
 
-    <app-products-list-paginator [pagination]="pagination"></app-products-list-paginator>
+    <app-products-list-paginator [pagination]="pagination" [sortOptions]="sortOptions"></app-products-list-paginator>
 
   </div>
 

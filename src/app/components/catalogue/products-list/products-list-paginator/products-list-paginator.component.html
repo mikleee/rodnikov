@@ -1,4 +1,15 @@
-<div>
+<div class="products-pagination">
+
+  <div class="sort">
+    <span class="sort-label">Сортировать</span>
+    <div class="sort-options">
+      <a class="sort-option"
+         [ngClass]="{'active':o.active}"
+         *ngFor="let o of sortOptions.options"
+         (click)="sortOptions.doSort(o)">{{o.label}}</a>
+    </div>
+  </div>
+
   <mat-paginator [length]="pagination.total"
                  [pageSize]="pagination.pageSize"
                  [pageSizeOptions]="pagination.pageSizeOptions"

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MatPaginatorIntl} from "@angular/material/paginator";
-import {AngularMaterialPagination} from "../../../../model/models";
+import {AngularMaterialPagination, SortOptions} from "../../../../model/models";
 
 const PAGINATOR = new MatPaginatorIntl();
 PAGINATOR.itemsPerPageLabel = 'Продуктов на странице';
@@ -17,6 +17,7 @@ PAGINATOR.getRangeLabel = (page, size, length) => `${page * size + 1}-${(page + 
 })
 export class ProductsListPaginatorComponent implements OnInit {
   @Input() pagination: AngularMaterialPagination;
+  @Input() sortOptions: SortOptions;
 
 
   constructor() {
