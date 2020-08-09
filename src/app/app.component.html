@@ -10,13 +10,13 @@
 
 <section class="banner">
   <div class="banner-img">
-    <img src="https://jopa.com/wp-content/uploads/jopa-logo-150x150.jpg" alt="img">
+    <img alt="img" src="https://jopa.com/wp-content/uploads/jopa-logo-150x150.jpg">
   </div>
   <div class="banner-search">
-    <input type="text"
+    <input (keyup)="onSearchKeyPress($event)"
+           [(ngModel)]="searchString"
            placeholder="Поиск товаров"
-           (keyup)="onSearchKeyPress($event)"
-           [(ngModel)]="searchString">
+           type="text">
   </div>
   <div class="banner-contacts">
     <a href="callto:+78142332211">+78142332211</a>

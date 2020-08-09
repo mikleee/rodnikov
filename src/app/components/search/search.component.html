@@ -8,14 +8,14 @@
 
   <div *ngIf="state.isError()">
     <div class="page-content">
-      <app-in-progress></app-in-progress>
+      <app-error></app-error>
     </div>
   </div>
 
   <div *ngIf="state.isReady()">
     <div class="page-path"></div>
     <h1 class="page-header">Поиск</h1>
-    <div class="page-content" [ngSwitch]="products.length">
+    <div [ngSwitch]="products.length" class="page-content">
       <div *ngSwitchCase="0">Совпадений не найдено</div>
       <div *ngSwitchDefault>
         <p>Найдено {{products.length}} совпадений.</p>

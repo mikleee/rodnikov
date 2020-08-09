@@ -21,42 +21,6 @@ export class CatalogueService {
     }).toPromise();
   }
 
-  getCategories(): Observable<ProductCategory[]> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
-      return Array.from(catalogueStore.categories.values());
-    })
-  }
-
-  getCategory(id): Observable<ProductCategory> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
-      return catalogueStore.categories.get(id);
-    });
-  }
-
-  getSubCategory(id): Observable<ProductSubCategory> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
-      return catalogueStore.subCategories.get(id);
-    });
-  }
-
-  getProduct(id): Observable<Product> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
-      return catalogueStore.products.get(id);
-    });
-  }
-
-  findProductByCriteria(searchValue: string): Observable<Product[]> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
-      let products: Product[] = [];
-      catalogueStore.products.forEach((product) => {
-        if (CatalogueService.productMatch(searchValue, product)) {
-          products.push(product);
-        }
-      })
-      return products;
-    });
-  }
-
   private static productMatch(searchValue: string, candidate: Product): boolean {
     let match = false;
 
@@ -94,6 +58,42 @@ export class CatalogueService {
     return match
   }
 
+  getCategories(): Observable<ProductCategory[]> {
+    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+      return Array.from(catalogueStore.categories.values());
+    })
+  }
+
+  getCategory(id): Observable<ProductCategory> {
+    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+      return catalogueStore.categories.get(id);
+    });
+  }
+
+  getSubCategory(id): Observable<ProductSubCategory> {
+    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+      return catalogueStore.subCategories.get(id);
+    });
+  }
+
+  getProduct(id): Observable<Product> {
+    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+      return catalogueStore.products.get(id);
+    });
+  }
+
+  findProductByCriteria(searchValue: string): Observable<Product[]> {
+    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+      let products: Product[] = [];
+      catalogueStore.products.forEach((product) => {
+        if (CatalogueService.productMatch(searchValue, product)) {
+          products.push(product);
+        }
+      })
+      return products;
+    });
+  }
+
   observable<T>(initial: Promise<CatalogueStore>, transformer: (catalogueStore: CatalogueStore) => T): Observable<T> {
     return new Observable<T>((observer) => {
       initial.then(
@@ -108,12 +108,10 @@ export class CatalogueService {
 }
 
 class CatalogueStore {
-  private sequence: number = 0;
-
   categories: Map<number, ProductCategory> = new Map<number, ProductCategory>();
   subCategories: Map<number, ProductSubCategory> = new Map<number, ProductSubCategory>();
   products: Map<number, Product> = new Map<number, Product>();
-
+  private sequence: number = 0;
 
   constructor(source: ProductCategory[]) {
     // normalise

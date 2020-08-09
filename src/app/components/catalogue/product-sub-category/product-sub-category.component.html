@@ -5,11 +5,11 @@
   </div>
 
   <div *ngIf="state.isError()">
-    <app-in-progress></app-in-progress>
+    <app-error></app-error>
   </div>
 
   <div *ngIf="state.isReady()">
-    <app-products-list class="sub-category-products" [products]="subCategory.products"></app-products-list>
+    <app-products-list [products]="subCategory.products" class="sub-category-products"></app-products-list>
   </div>
 
 </div>

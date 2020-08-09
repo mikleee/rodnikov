@@ -11,7 +11,7 @@ export interface Product {
 export interface ProductCategory {
   id?: number;
   name: string;
-  image: string;
+  image?: string;
   subcategories: ProductSubCategory[];
 }
 

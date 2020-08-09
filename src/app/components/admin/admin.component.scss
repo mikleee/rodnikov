@@ -1,0 +1,35 @@
+@import "../../../styles-variables";
+
+.form-group {
+  width: 400px;
+  display: flex;
+
+  & > * {
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  img.logo {
+    height: 24px;
+  }
+
+}
+
+
+.section {
+  margin: 2px;
+  padding: 5px;
+  border: $mainColor 1px solid;
+  border-radius: 3px;
+  position: relative;
+
+  &:hover {
+    background-color: rgba($mainColor, 0.1);
+  }
+
+  .toggle {
+    position: absolute;
+    right: 0;
+  }
+}

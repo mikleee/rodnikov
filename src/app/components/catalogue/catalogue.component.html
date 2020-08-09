@@ -8,16 +8,16 @@
 
   <div *ngIf="state.isError()">
     <div class="page-content">
-      <app-in-progress></app-in-progress>
+      <app-error></app-error>
     </div>
   </div>
 
   <div *ngIf="state.isReady()">
-    <div class="page-content" *ngIf="state.isReady()">
+    <div *ngIf="state.isReady()" class="page-content">
       <div class="categories">
-        <a class="category"
-           *ngFor="let category of categories"
-           [routerLink]="'' + category.id" routerLinkActive="active">{{category.name}}</a>
+        <a *ngFor="let category of categories"
+           [routerLink]="'' + category.id"
+           class="category" routerLinkActive="active">{{category.name}}</a>
       </div>
       <router-outlet></router-outlet>
     </div>

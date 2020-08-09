@@ -22,7 +22,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {ErrorComponent} from './components/error/error.component';
 import {InProgressComponent} from './components/in-progress/in-progress.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { ProductsListPaginatorComponent } from './components/catalogue/products-list/products-list-paginator/products-list-paginator.component';
+import {ProductsListPaginatorComponent} from './components/catalogue/products-list/products-list-paginator/products-list-paginator.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ProductsListPaginatorComponent } from './components/catalogue/products-
     CallbackPopupComponent,
     ErrorComponent,
     InProgressComponent,
-    ProductsListPaginatorComponent
+    ProductsListPaginatorComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

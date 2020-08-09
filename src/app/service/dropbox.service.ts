@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class DropboxService {
-  private accessToken: string = '4boTB42819AAAAAAAAAAAWUdbrxJBPm3DquCovFzuxbiH7xNUHFjUP8bpSW8u6JK';
+  private accessToken: string = 'Kr3jYtloFMAAAAAAAAAAAUcYYfDJTK6QsId3kJF_NsF13XGqyB3r7jF5SDHwAlcp';
   private baseFilesUrl: string = 'https://content.dropboxapi.com/2/files';
 
   constructor(private httpClient: HttpClient) {
@@ -15,7 +15,7 @@ export class DropboxService {
 
   getCatalogue(): Observable<Object> {
     let url = `${this.baseFilesUrl}/download`;
-    let file = '/catalogue.example.json';
+    let file = '/catalogue.json';
 
     return this.httpClient.post(url, null, {
         headers: {

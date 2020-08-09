@@ -1,18 +1,18 @@
 <div class="product-category">
 
   <div *ngIf="state.isLoading()">
-      <app-in-progress></app-in-progress>
+    <app-in-progress></app-in-progress>
   </div>
 
   <div *ngIf="state.isError()">
-      <app-in-progress></app-in-progress>
+    <app-error></app-error>
   </div>
 
   <div *ngIf="state.isReady()">
     <div class="product-category-subcategories">
-      <a class="product-category-subcategory"
-         *ngFor="let subCategory of category.subcategories"
-         [routerLink]="'' + subCategory.id" routerLinkActive="active">{{subCategory.name}}</a>
+      <a *ngFor="let subCategory of category.subcategories"
+         [routerLink]="'' + subCategory.id"
+         class="product-category-subcategory" routerLinkActive="active">{{subCategory.name}}</a>
     </div>
     <router-outlet></router-outlet>
   </div>

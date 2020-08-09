@@ -1,4 +1,4 @@
-<div class="products-list" [ngSwitch]="products.length">
+<div [ngSwitch]="products.length" class="products-list">
 
   <div *ngSwitchCase="0">Нет продуктов для отображения</div>
 
@@ -6,9 +6,9 @@
     <app-products-list-paginator [pagination]="pagination" [sortOptions]="sortOptions"></app-products-list-paginator>
 
     <div class="products">
-      <div class="product-wrapper" *ngFor="let product of page">
+      <div *ngFor="let product of page" class="product-wrapper">
         <div class="product">
-          <a class="product-image" [title]="product.name" routerLink="/product/{{product.id}}">
+          <a [title]="product.name" class="product-image" routerLink="/product/{{product.id}}">
             <img [src]="product.images[0]" alt="">
           </a>
           <a class="product-name" routerLink="/product/{{product.id}}">{{product.name}}</a>

@@ -9,6 +9,7 @@ import {PaymentAndDeliveryComponent} from "./components/payment-and-delivery/pay
 import {ProductSubCategoryComponent} from "./components/catalogue/product-sub-category/product-sub-category.component";
 import {ProductDetailsComponent} from "./components/catalogue/product-details/product-details.component";
 import {SearchComponent} from "./components/search/search.component";
+import {AdminComponent} from "./components/admin/admin.component";
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'product/:id',
     component: ProductDetailsComponent
+  },
+  {
+    path: 'admin1',
+    component: AdminComponent
   },
   {
     path: 'search',

@@ -8,7 +8,7 @@
 
   <div *ngIf="state.isError()">
     <div class="page-content">
-      <app-in-progress></app-in-progress>
+      <app-error></app-error>
     </div>
   </div>
 
@@ -26,7 +26,7 @@
     <div class="page-content">
       <div class="product-details-inner">
         <div class="product-images">
-          <div class="product-image-wrapper" *ngFor="let img of product.images">
+          <div *ngFor="let img of product.images" class="product-image-wrapper">
             <img [src]="img" alt="">
           </div>
         </div>
