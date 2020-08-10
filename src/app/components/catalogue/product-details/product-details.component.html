@@ -26,6 +26,7 @@
     <div class="page-content">
       <div class="product-details-inner">
         <div class="product-images">
+          <img src="assets/img/noimage.png" alt="" *ngIf="product.images.length==0">
           <div *ngFor="let img of product.images" class="product-image-wrapper">
             <img [src]="img" alt="">
           </div>

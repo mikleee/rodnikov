@@ -1,0 +1,27 @@
+<div class="section subcategory">
+  <div class="form-group">
+    <div>
+      <span>Артикул</span>
+    </div>
+    <div>
+      <span>{{subcategory.id}}</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label for="subcategoryName{{subcategory.id}}">Имя</label>
+    </div>
+    <div>
+      <input id="subcategoryName{{subcategory.id}}" type="text" [(ngModel)]="subcategory.name" name="subcategoryName{{subcategory.id}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label for="subcategoryImage{{subcategory.id}}">Логотип</label>
+    </div>
+    <div>
+      <input id="subcategoryImage{{subcategory.id}}" type="text" [(ngModel)]="subcategory.image.path" name="subcategoryImage{{subcategory.id}}">
+      <img class="logo" [src]="subcategory.image.path">
+    </div>
+  </div>
+</div>

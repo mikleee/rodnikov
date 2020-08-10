@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Product, ProductCategory, ProductSubCategory} from "../catalogue/catalogue.model";
 import {ViewState, ViewStateFactoryService} from "../../service/viewStateFactory.service";
 import {CatalogueService} from "../catalogue/catalogue.service";
 import {UtilService} from "../../util.service";
+import {ImageView, ProductCategoryView, ProductSubCategoryView, ProductView} from "./admin.models";
+import {Product, ProductCategory, ProductSubCategory} from "../catalogue/catalogue.model";
 
 @Component({
   selector: 'app-admin',
@@ -13,11 +14,91 @@ export class AdminComponent implements OnInit {
   sequence: number = 0;
   categories: ProductCategoryView[];
   state: ViewState;
+  submissionState: ViewState;
+
+  category: ProductCategoryView;
+  subcategory: ProductSubCategoryView;
+  product: ProductView;
 
   constructor(private productsService: CatalogueService,
               private viewStateFactory: ViewStateFactoryService,
               private util: UtilService) {
     this.state = viewStateFactory.newInstance();
+    this.submissionState = viewStateFactory.newInstance();
+  }
+
+  saveCatalogue() {
+    function toImage(img: ImageView): string {
+      return img == null ? null : img.path;
+    }
+
+
+    let result: ProductCategory[] = [];
+
+    this.categories.forEach(c => {
+      let c1: ProductCategory = {id: c.id, name: c.name, image: toImage(c.image), subcategories: []};
+      result.push(c1);
+
+      c.subcategories.forEach(cs => {
+        let sc1: ProductSubCategory = {id: cs.id, name: cs.name, image: toImage(cs.image), products: []};
+        c1.subcategories.push(sc1);
+
+        cs.products.forEach(p => {
+          let p1: Product = {id: p.id, name: p.name, description: p.description, price: p.price, priceLower: p.priceLower, images: []};
+          sc1.products.push(p1);
+
+          p.images.forEach(i => p1.images.push(i.path));
+        });
+      });
+    });
+
+    this.util.submit(this.productsService.saveCatalogue(result), this.submissionState);
+  }
+
+  onCategoryChange() {
+    this.subcategory = null;
+    this.product = null;
+  }
+
+  addCategory() {
+    this.onCategoryChange();
+    let id = ++this.sequence;
+    this.category = {id: id, name: `Новая категория ${id}`, image: new ImageView(null), subcategories: []};
+    this.categories.push(this.category);
+  }
+
+  deleteCategory(category: ProductCategoryView) {
+    this.category = null;
+    this.onCategoryChange();
+    this.categories = this.categories.filter(c => c.id != category.id);
+  }
+
+  addSubCategory(category: ProductCategoryView) {
+    this.onSubCategoryChange();
+    let id = ++this.sequence;
+    this.subcategory = {id: id, name: `Новая подкатегория ${id}`, image: new ImageView(null), products: []};
+    category.subcategories.push(this.subcategory);
+  }
+
+  deleteSubCategory(category: ProductCategoryView, subCategory: ProductSubCategoryView) {
+    this.subcategory = null;
+    this.onCategoryChange();
+    category.subcategories = category.subcategories.filter(sc => sc.id != subCategory.id);
+  }
+
+  addProduct(subCategory: ProductSubCategoryView) {
+    let id = ++this.sequence;
+    this.product = {id: id, name: `Новый продукт ${id}`, price: null, priceLower: null, description: null, images: []};
+    subCategory.products.push(this.product);
+  }
+
+  deleteProduct(subCategory: ProductSubCategoryView, product: ProductView) {
+    this.product = null;
+    subCategory.products = subCategory.products.filter(p => p.id != product.id);
+  }
+
+  onSubCategoryChange() {
+    this.product = null;
   }
 
   ngOnInit(): void {
@@ -37,62 +118,5 @@ export class AdminComponent implements OnInit {
       });
 
     });
-  }
-}
-
-class ProductCategoryView {
-  id?: number;
-  name: string;
-  image?: ImageView;
-  subcategories: ProductSubCategoryView[] = [];
-  hidden: boolean = true;
-
-  constructor(src: ProductCategory) {
-    this.id = src.id;
-    this.name = src.name;
-    this.image = src.image == null ? null : new ImageView(src.image);
-    src.subcategories.forEach(sc => this.subcategories.push(new ProductSubCategoryView(sc)))
-  }
-}
-
-class ProductSubCategoryView {
-  id?: number;
-  name: string;
-  image: ImageView;
-  products: ProductView[] = [];
-  hidden: boolean = true;
-
-  constructor(src: ProductSubCategory) {
-    this.id = src.id;
-    this.name = src.name;
-    this.image = src.image == null ? null : new ImageView(src.image);
-    src.products.forEach(p => this.products.push(new ProductView(p)))
-  }
-}
-
-class ProductView {
-  id?: number;
-  name: string;
-  description?: string;
-  price: number;
-  priceLower?: number;
-  images: ImageView[] = [];
-  hidden: boolean = true;
-
-  constructor(src: Product) {
-    this.id = src.id;
-    this.name = src.name;
-    this.description = src.description;
-    this.price = src.price;
-    this.priceLower = src.priceLower;
-    src.images.forEach(i => this.images.push(new ImageView(i)))
-  }
-}
-
-class ImageView {
-  path: string;
-
-  constructor(path: string) {
-    this.path = path;
   }
 }

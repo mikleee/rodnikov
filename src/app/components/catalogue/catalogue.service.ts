@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Product, ProductCategory, ProductSubCategory} from "./catalogue.model";
+import {CatalogueStore, Product, ProductCategory, ProductSubCategory} from "./catalogue.model";
 import {DropboxService} from "../../service/dropbox.service";
 import {Observable} from "rxjs";
 
@@ -7,18 +7,8 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class CatalogueService {
-  private readonly catalogueStore: Promise<CatalogueStore>;
 
-  constructor(dbx: DropboxService) {
-    this.catalogueStore = new Observable<CatalogueStore>((observer) => {
-      dbx.getCatalogue()
-        .subscribe(result => {
-          observer.next(new CatalogueStore(result as ProductCategory[]));
-          observer.complete();
-        }, error => {
-          observer.error(error);
-        });
-    }).toPromise();
+  constructor(private dbx: DropboxService) {
   }
 
   private static productMatch(searchValue: string, candidate: Product): boolean {
@@ -58,32 +48,40 @@ export class CatalogueService {
     return match
   }
 
+  saveCatalogue(data: ProductCategory[]): Observable<Object> {
+    return this.dbx.saveCatalogue(data);
+  }
+
   getCategories(): Observable<ProductCategory[]> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+    return this.observable(this.getCatalogue(), (catalogueStore: CatalogueStore) => {
       return Array.from(catalogueStore.categories.values());
     })
   }
 
   getCategory(id): Observable<ProductCategory> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+    return this.observable(this.getCatalogue(), (catalogueStore: CatalogueStore) => {
       return catalogueStore.categories.get(id);
     });
   }
 
   getSubCategory(id): Observable<ProductSubCategory> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+    return this.observable(this.getCatalogue(), (catalogueStore: CatalogueStore) => {
       return catalogueStore.subCategories.get(id);
     });
   }
 
   getProduct(id): Observable<Product> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+    return this.observable(this.getCatalogue(), (catalogueStore: CatalogueStore) => {
       return catalogueStore.products.get(id);
     });
   }
 
+  private getCatalogue() {
+    return this.dbx.getCatalogue();
+  }
+
   findProductByCriteria(searchValue: string): Observable<Product[]> {
-    return this.observable(this.catalogueStore, (catalogueStore: CatalogueStore) => {
+    return this.observable(this.getCatalogue(), (catalogueStore: CatalogueStore) => {
       let products: Product[] = [];
       catalogueStore.products.forEach((product) => {
         if (CatalogueService.productMatch(searchValue, product)) {
@@ -94,9 +92,9 @@ export class CatalogueService {
     });
   }
 
-  observable<T>(initial: Promise<CatalogueStore>, transformer: (catalogueStore: CatalogueStore) => T): Observable<T> {
+  observable<T>(initial: Observable<CatalogueStore>, transformer: (catalogueStore: CatalogueStore) => T): Observable<T> {
     return new Observable<T>((observer) => {
-      initial.then(
+      initial.subscribe(
         (result: CatalogueStore) => {
           let result1: T = transformer(result);
           observer.next(result1);
@@ -105,43 +103,4 @@ export class CatalogueService {
     });
   }
 
-}
-
-class CatalogueStore {
-  categories: Map<number, ProductCategory> = new Map<number, ProductCategory>();
-  subCategories: Map<number, ProductSubCategory> = new Map<number, ProductSubCategory>();
-  products: Map<number, Product> = new Map<number, Product>();
-  private sequence: number = 0;
-
-  constructor(source: ProductCategory[]) {
-    // normalise
-    source.forEach((category) => {
-      category.id = category.id || this.sequence++;
-
-      category.subcategories.forEach((subcategory) => {
-        subcategory.id = subcategory.id || this.sequence++;
-        subcategory.category = category;
-
-        subcategory.products.forEach((product) => {
-          product.id = product.id || this.sequence++;
-          product.subcategory = subcategory;
-        });
-      });
-
-    });
-
-    // assign
-    source.forEach((category) => {
-      this.categories.set(category.id, category);
-
-      category.subcategories.forEach((subCategory) => {
-        this.subCategories.set(subCategory.id, subCategory);
-
-        subCategory.products.forEach((product) => {
-          this.products.set(product.id, product);
-        });
-
-      });
-    })
-  }
 }

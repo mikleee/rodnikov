@@ -16,136 +16,73 @@
     <div class="page-path"></div>
     <h1 class="page-header">Администраторская</h1>
     <div class="page-content">
-
-      <form>
-        <div *ngFor="let category of categories;">
-          <div class="section hidden category" [hidden]="!category.hidden">
-            {{category.name}}
-            <a class="toggle" (click)="category.hidden = !category.hidden">Показать/спрятать</a>
+      <form class="form" (ngSubmit)="saveCatalogue()">
+        <div class="main-section section category">
+          <div class="section">
+            <div class="form-group select">
+              <div>
+                <label for="category">Категория</label>
+              </div>
+              <div>
+                <select id="category" [(ngModel)]="category" name="category" (change)="onCategoryChange()">
+                  <option *ngFor="let c of categories" [ngValue]="c">{{c.name}}</option>
+                </select>
+                <button type="button" (click)="addCategory()">Добавить</button>
+                <button type="button" (click)="deleteCategory(category)" *ngIf="category">Удалить</button>
+              </div>
+            </div>
           </div>
-          <div class="section category" [hidden]="category.hidden">
-            <a class="toggle" (click)="category.hidden = !category.hidden">Показать/спрятать</a>
-            <div class="form-group">
-              <div>
-                <span>Артикул</span>
-              </div>
-              <div>
-                <span>{{category.id}}</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <div>
-                <label for="categoryName{{category.id}}">Имя</label>
-              </div>
-              <div>
-                <input id="categoryName{{category.id}}" type="text" [(ngModel)]="category.name" name="categoryName{{category.id}}">
-              </div>
-            </div>
-            <div class="form-group">
-              <div>
-                <label for="categoryImage{{category.id}}">Логотип</label>
-              </div>
-              <div>
-                <input id="categoryImage{{category.id}}" type="text" [(ngModel)]="category.image.path" name="categoryImage{{category.id}}">
-                <img class="logo" [src]="category.image.path">
-              </div>
-            </div>
-
-            <div class="section subcategories">
-              <div *ngFor="let subcategory of category.subcategories;">
-                <div class="section hidden subcategory" [hidden]="!subcategory.hidden">
-                  {{subcategory.name}}
-                  <a class="toggle" (click)="subcategory.hidden = !subcategory.hidden">Показать/спрятать</a>
-                </div>
-                <div class="section subcategory" [hidden]="subcategory.hidden">
-                  <a class="toggle" (click)="subcategory.hidden = !subcategory.hidden">Показать/спрятать</a>
-                  <div class="form-group">
-                    <div>
-                      <span>Артикул</span>
-                    </div>
-                    <div>
-                      <span>{{subcategory.id}}</span>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div>
-                      <label for="subcategoryName{{subcategory.id}}">Имя</label>
-                    </div>
-                    <div>
-                      <input id="subcategoryName{{subcategory.id}}" type="text" [(ngModel)]="subcategory.name" name="subcategoryName{{subcategory.id}}">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div>
-                      <label for="subcategoryImage{{subcategory.id}}">Логотип</label>
-                    </div>
-                    <div>
-                      <input id="subcategoryImage{{subcategory.id}}" type="text" [(ngModel)]="subcategory.image.path" name="subcategoryImage{{subcategory.id}}">
-                      <img class="logo" [src]="subcategory.image.path">
-                    </div>
-                  </div>
-
-                  <div class="section products">
-                    <div *ngFor="let product of subcategory.products;">
-                      <div class="section hidden product" [hidden]="!product.hidden">
-                        {{product.name}}
-                        <a class="toggle" (click)="product.hidden = !product.hidden">Показать/спрятать</a>
-                      </div>
-                      <div class="section product" [hidden]="product.hidden">
-                        <a class="toggle" (click)="product.hidden = !product.hidden">Показать/спрятать</a>
-                        <div class="form-group">
-                          <div>
-                            <span>Артикул</span>
-                          </div>
-                          <div>
-                            <span>{{product.id}}</span>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <div>
-                            <label for="productName{{product.id}}">Имя</label>
-                          </div>
-                          <div>
-                            <input id="productName{{product.id}}" type="text" [(ngModel)]="product.name" name="productName{{product.id}}">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <div>
-                            <label for="productPrice{{product.id}}">Цена</label>
-                          </div>
-                          <div>
-                            <input id="productPrice{{product.id}}" type="text" [(ngModel)]="product.price" name="productPrice{{product.id}}">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <div>
-                            <label for="productPriceLower{{product.id}}">Цена от</label>
-                          </div>
-                          <div>
-                            <input id="productPriceLower{{product.id}}" type="text" [(ngModel)]="product.priceLower" name="productPriceLower{{product.id}}">
-                          </div>
-                        </div>
-
-                        <div class="section product-logos">
-                          <div class="form-group" *ngFor="let img of product.images; index as il">
-                            <div>
-                              <label for="productImage{{product.id}}{{il}}">Логотип №{{il}}</label>
-                            </div>
-                            <div>
-                              <input id="productImage{{product.id}}{{il}}" type="text" [(ngModel)]="img.path" name="productImage{{product.id}}{{il}}">
-                              <img class="logo" [src]="img.path">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
+          <div class="section" *ngIf="category">
+            <app-product-category-form [category]="category"></app-product-category-form>
           </div>
         </div>
+
+        <div class="main-section section subcategory" *ngIf="category">
+          <div class="section">
+            <div class="form-group select">
+              <div>
+                <label for="subcategory">Подкатегория</label>
+              </div>
+              <div>
+                <select id="subcategory" [(ngModel)]="subcategory" name="subcategory" (change)="onSubCategoryChange()">
+                  <option *ngFor="let sc of category.subcategories" [ngValue]="sc">{{sc.name}}</option>
+                </select>
+                <button type="button" (click)="addSubCategory(category)">Добавить</button>
+                <button type="button" (click)="deleteSubCategory(category, subcategory)" *ngIf="subcategory">Удалить</button>
+              </div>
+            </div>
+          </div>
+          <div class="section" *ngIf="subcategory">
+            <app-product-subcategory-form [subcategory]="subcategory"></app-product-subcategory-form>
+          </div>
+        </div>
+
+        <div class="main-section section product" *ngIf="subcategory">
+          <div class="section">
+            <div class="form-group select">
+              <div>
+                <label for="product">Продукт</label>
+              </div>
+              <div>
+                <select id="product" [(ngModel)]="product" name="product">
+                  <option *ngFor="let p of subcategory.products" [ngValue]="p">{{p.name}}</option>
+                </select>
+                <button type="button" (click)="addProduct(subcategory)">Добавить</button>
+                <button type="button" (click)="deleteProduct(subcategory, product)" *ngIf="product">Удалить</button>
+              </div>
+            </div>
+          </div>
+          <div class="section" *ngIf="product">
+            <app-product-form [product]="product"></app-product-form>
+          </div>
+        </div>
+
+        <div class="section buttons">
+          <button type="submit" [disabled]="submissionState.isSubmitting()">Жмакай</button>
+          <app-in-progress *ngIf="submissionState.isSubmitting()"></app-in-progress>
+          <app-error *ngIf="submissionState.isError()"></app-error>
+        </div>
+
       </form>
 
     </div>

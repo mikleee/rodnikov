@@ -13,13 +13,16 @@
   </div>
 
   <div *ngIf="state.isReady()">
-    <div *ngIf="state.isReady()" class="page-content">
-      <div class="categories">
-        <a *ngFor="let category of categories"
-           [routerLink]="'' + category.id"
-           class="category" routerLinkActive="active">{{category.name}}</a>
+    <div *ngIf="state.isReady()" class="page-content" [ngSwitch]="categories.length">
+      <div *ngSwitchCase="0">Нет продуктов для отображения</div>
+      <div *ngSwitchDefault>
+        <div class="categories">
+          <a *ngFor="let category of categories"
+             [routerLink]="'' + category.id"
+             class="category" routerLinkActive="active">{{category.name}}</a>
+        </div>
+        <router-outlet></router-outlet>
       </div>
-      <router-outlet></router-outlet>
     </div>
   </div>
 

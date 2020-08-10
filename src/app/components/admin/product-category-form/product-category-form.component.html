@@ -1,0 +1,27 @@
+<div class="category">
+  <div class="form-group">
+    <div>
+      <span>Артикул</span>
+    </div>
+    <div>
+      <span>{{category.id}}</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label for="categoryName{{category.id}}">Имя</label>
+    </div>
+    <div>
+      <input id="categoryName{{category.id}}" type="text" [(ngModel)]="category.name" name="categoryName{{category.id}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label for="categoryImage{{category.id}}">Логотип</label>
+    </div>
+    <div>
+      <input id="categoryImage{{category.id}}" type="text" [(ngModel)]="category.image.path" name="categoryImage{{category.id}}">
+      <img class="logo" [src]="category.image.path">
+    </div>
+  </div>
+</div>

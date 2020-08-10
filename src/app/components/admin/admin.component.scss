@@ -1,5 +1,33 @@
 @import "../../../styles-variables";
 
+.form {
+  display: flex;
+  flex-wrap: wrap;
+
+  .category {
+    width: 50%;
+  }
+
+  .subcategory {
+    width: 50%;
+  }
+
+  .product {
+    width: 100%;
+  }
+
+  .buttons {
+    width: 100%;
+  }
+
+  .select {
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+}
+
+
 .form-group {
   width: 400px;
   display: flex;
@@ -10,6 +38,12 @@
     align-items: center;
   }
 
+  input[type="text"],
+  textarea,
+  select {
+    min-width: 200px;
+  }
+
   img.logo {
     height: 24px;
   }
@@ -18,18 +52,13 @@
 
 
 .section {
-  margin: 2px;
   padding: 5px;
-  border: $mainColor 1px solid;
-  border-radius: 3px;
-  position: relative;
+}
+
+.main-section {
+  border: rgba(255, 255, 255, 0) 1px solid;
 
   &:hover {
-    background-color: rgba($mainColor, 0.1);
-  }
-
-  .toggle {
-    position: absolute;
-    right: 0;
+    border: $mainColor 1px solid;
   }
 }

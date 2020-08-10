@@ -9,12 +9,21 @@
   </div>
 
   <div *ngIf="state.isReady()">
-    <div class="product-category-subcategories">
-      <a *ngFor="let subCategory of category.subcategories"
-         [routerLink]="'' + subCategory.id"
-         class="product-category-subcategory" routerLinkActive="active">{{subCategory.name}}</a>
+    <div *ngIf="state.isReady()" class="page-content" [ngSwitch]="category.subcategories.length">
+      <div *ngSwitchCase="0">Нет продуктов для отображения</div>
+      <div *ngSwitchDefault>
+        <div class="product-category-subcategories">
+          <a *ngFor="let subCategory of category.subcategories"
+             [routerLink]="'' + subCategory.id"
+             class="product-category-subcategory" routerLinkActive="active">{{subCategory.name}}</a>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
     </div>
-    <router-outlet></router-outlet>
+
+
+
+
   </div>
 
 </div>

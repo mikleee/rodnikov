@@ -9,7 +9,7 @@
       <div *ngFor="let product of page" class="product-wrapper">
         <div class="product">
           <a [title]="product.name" class="product-image" routerLink="/product/{{product.id}}">
-            <img [src]="product.images[0]" alt="">
+            <img [src]="product.images[0] || 'assets/img/noimage.png'" alt="">
           </a>
           <a class="product-name" routerLink="/product/{{product.id}}">{{product.name}}</a>
           <div class="product-price">{{product | productPrice}}</div>

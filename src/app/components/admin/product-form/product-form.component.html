@@ -1,0 +1,60 @@
+<div class="section product">
+  <div class="form-group">
+    <div>
+      <span>Артикул</span>
+    </div>
+    <div>
+      <span>{{product.id}}</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label for="productName{{product.id}}">Имя</label>
+    </div>
+    <div>
+      <input id="productName{{product.id}}" type="text" [(ngModel)]="product.name" name="productName{{product.id}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label for="productDescription{{product.id}}">Описание</label>
+    </div>
+    <div>
+      <textarea rows="4" id="productDescription{{product.id}}" [(ngModel)]="product.description" name="productDescription{{product.id}}"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label for="productPrice{{product.id}}">Цена</label>
+    </div>
+    <div>
+      <input id="productPrice{{product.id}}" type="text" [(ngModel)]="product.price" name="productPrice{{product.id}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label for="productPriceLower{{product.id}}">Цена от</label>
+    </div>
+    <div>
+      <input id="productPriceLower{{product.id}}" type="text" [(ngModel)]="product.priceLower" name="productPriceLower{{product.id}}">
+    </div>
+  </div>
+
+  <div class="section product-logos">
+    <div class="form-group">
+      <div></div>
+      <div>
+        <button type="button" (click)="addProductImage()">Добавить лого</button>
+      </div>
+    </div>
+    <div class="form-group" *ngFor="let img of product.images; index as il">
+      <div>
+        <button type="button" (click)="deleteProductImage(img)">Удалить</button>
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="img.path" name="productImage{{product.id}}{{il}}">
+        <img class="logo" [src]="img.path">
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,6 +24,10 @@ import {InProgressComponent} from './components/in-progress/in-progress.componen
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {ProductsListPaginatorComponent} from './components/catalogue/products-list/products-list-paginator/products-list-paginator.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ProductCategoryFormComponent } from './components/admin/product-category-form/product-category-form.component';
+import { ProductSubcategoryFormComponent } from './components/admin/product-subcategory-form/product-subcategory-form.component';
+import { ProductFormComponent } from './components/admin/product-form/product-form.component';
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -43,7 +47,10 @@ import { AdminComponent } from './components/admin/admin.component';
     ErrorComponent,
     InProgressComponent,
     ProductsListPaginatorComponent,
-    AdminComponent
+    AdminComponent,
+    ProductCategoryFormComponent,
+    ProductSubcategoryFormComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +61,9 @@ import { AdminComponent } from './components/admin/admin.component';
     HttpClientModule,
     MatPaginatorModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

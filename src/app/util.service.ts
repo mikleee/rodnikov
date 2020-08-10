@@ -20,5 +20,14 @@ export class UtilService {
     return observable;
   }
 
+  submit<T>(observable: Observable<T>, state: ViewState, callback?: (result: T) => void): Observable<T> {
+    state.submitting();
+    observable.subscribe((result) => {
+      state.ready();
+      callback(result);
+    }, (error) => state.error());
+    return observable;
+  }
+
 
 }
