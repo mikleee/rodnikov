@@ -1,3 +1,33 @@
 .contacts {
+  .contacts-layout {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 
+    .location {
+      width: 100%;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      padding-bottom: 40px;
+      font-size: 15px;
+
+      .info {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+
+        img {
+          width: 20px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
 }
+
+
+
