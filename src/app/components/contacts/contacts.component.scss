@@ -1,7 +1,4 @@
 .contacts {
-  h1 {
-    text-align: center;
-  }
 
   img {
     width: 20px;
@@ -11,11 +8,11 @@
 
   .contacts-layout {
     display: flex;
-    justify-content: space-around;
 
     .contact-info {
       display: flex;
       flex-direction: column;
+      width: 40%;
 
       .info {
         display: flex;
@@ -30,7 +27,7 @@
     }
 
     .location {
-      width: 40%;
+      width: 60%;
 
       p {
         font-weight: bold;

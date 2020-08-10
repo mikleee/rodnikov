@@ -6,10 +6,14 @@
   box-sizing: border-box;
 }
 
+body {
+  color: $mainTextColor;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
-  color: black;
+  color: $mainTextColor;
 }
 
 img {
@@ -41,7 +45,6 @@ img {
     font-size: 2em;
     margin: 20px 0 20px 0;
     font-weight: bold;
-    position: relative;
   }
 
   .page-content {
