@@ -2,13 +2,15 @@ import {Injectable} from "@angular/core";
 import {CatalogueStore, Product, ProductCategory, ProductSubCategory} from "./catalogue.model";
 import {DropboxService} from "../../service/dropbox.service";
 import {Observable} from "rxjs";
+import {CatalogueMockStore} from "../../service/catalogue.mock.store";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CatalogueService {
 
-  constructor(private dbx: DropboxService) {
+  constructor(private dbx: DropboxService,
+              private cms: CatalogueMockStore) {
   }
 
   private static productMatch(searchValue: string, candidate: Product): boolean {
@@ -49,7 +51,7 @@ export class CatalogueService {
   }
 
   saveCatalogue(data: ProductCategory[]): Observable<Object> {
-    return this.dbx.saveCatalogue(data);
+    return this.cms.saveCatalogue(data);
   }
 
   getCategories(): Observable<ProductCategory[]> {
@@ -77,7 +79,7 @@ export class CatalogueService {
   }
 
   private getCatalogue() {
-    return this.dbx.getCatalogue();
+    return this.cms.getCatalogue();
   }
 
   findProductByCriteria(searchValue: string): Observable<Product[]> {
