@@ -8,7 +8,7 @@ import {CatalogueStore, ProductCategory} from "../components/catalogue/catalogue
   providedIn: 'root'
 })
 export class DropboxService {
-  private accessToken: string = 'i2rg2AFmGmAAAAAAAAAAAZ7B8qQquzFhMoywU1XIYpXLfs5yl1kSbYpUBFYerNe4';
+  private accessToken: string = 'QuElEwkQw5AAAAAAAAAAAXXIjd9p_dTr-cSSUrBookc9MCFJKIzDVRZRO9u1Fgoz';
   private catalogue: any;
 
   constructor(private httpClient: HttpClient,
