@@ -16,6 +16,12 @@
     <div class="page-path"></div>
     <h1 class="page-header">Администраторская</h1>
     <div class="page-content">
+
+      <div>
+
+      </div>
+
+
       <form class="form" (ngSubmit)="saveCatalogue()">
         <div class="main-section section category">
           <div class="section">
@@ -78,7 +84,8 @@
         </div>
 
         <div class="section buttons">
-          <button type="submit" [disabled]="submissionState.isSubmitting()">Жмакай</button>
+          <button type="submit" [disabled]="submissionState.isSubmitting()">Сохранить</button>
+          <button type="button" [disabled]="submissionState.isSubmitting()" (click)="exportCatalogue()">Экспорт</button>
           <app-in-progress *ngIf="submissionState.isSubmitting()"></app-in-progress>
           <app-error *ngIf="submissionState.isError()"></app-error>
         </div>

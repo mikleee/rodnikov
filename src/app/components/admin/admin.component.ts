@@ -4,6 +4,7 @@ import {CatalogueService} from "../catalogue/catalogue.service";
 import {UtilService} from "../../util.service";
 import {ImageView, ProductCategoryView, ProductSubCategoryView, ProductView} from "./admin.models";
 import {Product, ProductCategory, ProductSubCategory} from "../catalogue/catalogue.model";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-admin',
@@ -22,12 +23,25 @@ export class AdminComponent implements OnInit {
 
   constructor(private productsService: CatalogueService,
               private viewStateFactory: ViewStateFactoryService,
+              private datePipe: DatePipe,
               private util: UtilService) {
     this.state = viewStateFactory.newInstance();
     this.submissionState = viewStateFactory.newInstance();
   }
 
   saveCatalogue() {
+    let result = this.prepareData(this.categories);
+    this.util.submit(this.productsService.saveCatalogue(result), this.submissionState);
+  }
+
+  exportCatalogue() {
+    let result = this.prepareData(this.categories);
+    this.state.isSubmitting();
+    this.util.downloadFile(JSON.stringify(result), `${this.util.fileTimeStamp()} catalogue.json`);
+    this.state.ready();
+  }
+
+  private prepareData(categories: ProductCategoryView[]): ProductCategory[] {
     function toImage(img: ImageView): string {
       return img == null ? null : img.path;
     }
@@ -51,8 +65,7 @@ export class AdminComponent implements OnInit {
         });
       });
     });
-
-    this.util.submit(this.productsService.saveCatalogue(result), this.submissionState);
+    return result;
   }
 
   onCategoryChange() {

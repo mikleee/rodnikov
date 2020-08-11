@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {DatePipe} from "@angular/common";
 import {CatalogueStore, ProductCategory} from "../components/catalogue/catalogue.model";
+import {UtilService} from "../util.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class DropboxService {
   private catalogue: any;
 
   constructor(private httpClient: HttpClient,
-              private datePipe: DatePipe) {
+              private util: UtilService) {
   }
 
   getCatalogue(): Observable<CatalogueStore> {
@@ -44,7 +45,7 @@ export class DropboxService {
 
   saveCatalogue(data: ProductCategory[]): Observable<Object> {
     let url = 'https://content.dropboxapi.com/2/files/upload';
-    let file = `/catalogs/${this.datePipe.transform(new Date(), 'yyyy-MM-dd-HH:mm')}-catalogue.json`;
+    let file = `/catalogs/${this.util.fileTimeStamp()}-catalogue.json`;
 
     let blob = new Blob([JSON.stringify(data)], {type: 'application/json'});
 
